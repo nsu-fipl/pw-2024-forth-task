@@ -6,7 +6,7 @@ def test(test_body):
     @functools.wraps(test_body)
     def wrapper(*args, **kwargs):
         print(f'running test {test_body.__name__}...')
-        test_body(args, kwargs)
+        test_body(*args, **kwargs)
         print(f'test {test_body.__name__} finished!')
     return wrapper
 
